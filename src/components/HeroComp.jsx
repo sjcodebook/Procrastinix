@@ -1,7 +1,7 @@
 import { Box, Stack, Typography, TextField, Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
-import Mascot from '../assets/procrastinix_mascot.png'
+import Mascot from '../assets/procrastinix-mascot.png'
 import GreenHighlight from '../assets/green-highlight.svg'
 
 const CustomBtn = styled(Button)(() => ({
@@ -72,7 +72,7 @@ export default function HeroComp() {
             procrastination and hello to success—free to your inbox.
           </Typography>
           <Stack
-            mt={1}
+            mt={0.5}
             direction='row'
             justifyContent='flex-start'
             alignItems='flex-start'
@@ -99,7 +99,9 @@ export default function HeroComp() {
               </Typography>
             </Stack>
             <CustomBtn variant='contained' size='large'>
-              Subscribe for Free Now
+              <Typography fontSize='15px' fontWeight={700}>
+                Subscribe for Free Now
+              </Typography>
             </CustomBtn>
           </Stack>
         </Stack>
