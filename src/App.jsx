@@ -1,5 +1,15 @@
-import Button from '@mui/material/Button'
+import CssBaseline from '@mui/material/CssBaseline'
+import { Box } from '@mui/material'
 
-export default function ButtonUsage() {
-  return <Button variant='contained'>Hello world</Button>
+import HeroComp from './components/HeroComp'
+import WhyJoin from './components/WhyJoin'
+
+export default function App() {
+  return (
+    <Box width='100%'>
+      <CssBaseline />
+      <HeroComp />
+      <WhyJoin />
+    </Box>
+  )
 }
