@@ -42,7 +42,7 @@ const data = [
   },
 ]
 
-export default function HeroComp() {
+export default function WhyJoin() {
   return (
     <Box bgcolor='#f6d7ff' width='100%' pt={4} pb={6}>
       <Stack
@@ -85,7 +85,7 @@ export default function HeroComp() {
                 <img src={item.icon} alt={item.title} width='80px' height='80px' />
                 <Typography
                   component='h4'
-                  fontSize='24px'
+                  fontSize='28px'
                   fontWeight={700}
                   sx={{
                     textDecoration: 'underline',
