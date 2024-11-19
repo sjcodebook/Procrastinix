@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material'
 
 import Owl from '../assets/owl-outline.svg'
+import GreenHighlight from '../assets/green-highlight-2.svg'
 
 export default function MeetNix() {
   return (
@@ -14,9 +15,26 @@ export default function MeetNix() {
         mx='auto'
         gap={10}>
         <Stack px={4} py={6} bgcolor='#fff' gap={2} borderRadius='20px'>
-          <Typography component='h3' fontSize='52px' fontWeight={700} lineHeight='60px'>
-            Meet Nix and the Mission of ProcrastiNix
-          </Typography>
+          <Box position='relative'>
+            <img
+              src={GreenHighlight}
+              width={350}
+              style={{
+                position: 'absolute',
+                top: '58px',
+                left: '38px',
+                zIndex: 0,
+              }}
+            />
+            <Typography
+              position='relative'
+              component='h3'
+              fontSize='52px'
+              fontWeight={700}
+              lineHeight='60px'>
+              Meet Nix and the Mission of ProcrastiNix
+            </Typography>
+          </Box>
           <Typography
             component='p'
             fontSize='34px'

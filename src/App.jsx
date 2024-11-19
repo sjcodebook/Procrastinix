@@ -6,6 +6,7 @@ import WhyJoin from './components/WhyJoin'
 import CtaComp1 from './components/CtaComp1'
 import WhatsInside from './components/WhatsInside'
 import MeetNix from './components/MeetNix'
+import Testimonials from './components/Testimonials'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <CtaComp1 />
       <WhatsInside />
       <MeetNix />
+      <Testimonials />
     </Box>
   )
 }
