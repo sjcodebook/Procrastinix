@@ -5,6 +5,7 @@ import HeroComp from './components/HeroComp'
 import WhyJoin from './components/WhyJoin'
 import CtaComp1 from './components/CtaComp1'
 import WhatsInside from './components/WhatsInside'
+import MeetNix from './components/MeetNix'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <WhyJoin />
       <CtaComp1 />
       <WhatsInside />
+      <MeetNix />
     </Box>
   )
 }
