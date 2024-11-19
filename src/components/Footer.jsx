@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography, Tooltip } from '@mui/material'
 
 import Mail from '../assets/mail-icon.svg'
 import Insta from '../assets/insta-icon.svg'
@@ -11,8 +11,25 @@ export default function MeetNix() {
           ProcrastiNix.com &#169; 2024
         </Typography>
         <Stack direction='row' justifyContent='center' alignItems='center' gap={2}>
-          <img src={Mail} width='40px' />
-          <img src={Insta} width='34px' />
+          <Tooltip title='support@procrastinix.com'>
+            <img
+              src={Mail}
+              width='40px'
+              onClick={() => window.open('mailto:support@procrastinix.com', '_blank')}
+              style={{
+                cursor: 'pointer',
+              }}
+            />
+          </Tooltip>
+          <Tooltip title='@procrastinix_official'>
+            <img
+              src={Insta}
+              width='34px'
+              style={{
+                cursor: 'pointer',
+              }}
+            />
+          </Tooltip>
         </Stack>
         <Stack direction='row' justifyContent='center' alignItems='center' gap={2}>
           <Typography

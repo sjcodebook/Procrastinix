@@ -50,11 +50,11 @@ const data = [
     answer:
       'Yes! We love feedback from our community. Feel free to contact us with suggestions for future topics.',
   },
-  {
-    question: 'How do I access additional resources?',
-    answer:
-      'We sometimes include links to extra resources in our emails, and you can also explore our blog for more content on ProcrastiNix.com.',
-  },
+  // {
+  //   question: 'How do I access additional resources?',
+  //   answer:
+  //     'We sometimes include links to extra resources in our emails, and you can also explore our blog for more content on ProcrastiNix.com.',
+  // },
 ]
 
 export default function FaqComp() {
