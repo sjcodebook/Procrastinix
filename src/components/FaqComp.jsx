@@ -57,7 +57,7 @@ const data = [
   },
 ]
 
-export default function WhatsInside() {
+export default function FaqComp() {
   return (
     <Box bgcolor='#9afd7f' width='100%' pt={4} pb={6}>
       <Stack

@@ -40,7 +40,7 @@ const testimonials = [
   },
 ]
 
-const TestimonialsGrid = () => {
+const Testimonials = () => {
   return (
     <Box bgcolor='#fff' width='100%' py={8}>
       <Stack
@@ -96,4 +96,4 @@ const TestimonialsGrid = () => {
   )
 }
 
-export default TestimonialsGrid
+export default Testimonials
