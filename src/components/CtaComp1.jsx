@@ -12,7 +12,14 @@ export default function CtaComp1() {
         maxWidth='1250px'
         mx='auto'
         gap={4}>
-        <Typography component='h3' fontSize='52px' fontWeight={700} lineHeight='60px'>
+        <Typography
+          component='h3'
+          fontSize='52px'
+          fontWeight={700}
+          lineHeight='60px'
+          sx={{
+            textDecoration: 'underline',
+          }}>
           Ready to Supercharge Your Productivity?
         </Typography>
         <SubscribeForm showSubText={false} btnText='Join Now for Free' />
