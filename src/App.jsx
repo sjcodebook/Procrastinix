@@ -6,9 +6,10 @@ import WhyJoin from './components/WhyJoin'
 import CtaComp1 from './components/CtaComp1'
 import WhatsInside from './components/WhatsInside'
 import MeetNix from './components/MeetNix'
+import CtaComp2 from './components/CtaComp2'
 import Testimonials from './components/Testimonials'
 import FaqComp from './components/FaqComp'
-import CtaComp2 from './components/CtaComp2'
+import CtaComp3 from './components/CtaComp3'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -20,9 +21,10 @@ export default function App() {
       <CtaComp1 />
       <WhatsInside />
       <MeetNix />
+      <CtaComp2 />
       <Testimonials />
       <FaqComp />
-      <CtaComp2 />
+      <CtaComp3 />
       <Footer />
     </Box>
   )

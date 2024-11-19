@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from '@mui/material'
 
 import SubscribeForm from './common/SubscribeForm'
 
-export default function CtaComp2() {
+export default function CtaComp3() {
   return (
     <Box bgcolor='#ffffff' width='100%' py={6}>
       <Stack
@@ -13,7 +13,7 @@ export default function CtaComp2() {
         mx='auto'
         gap={4}>
         <Typography component='h3' fontSize='52px' fontWeight={700} lineHeight='60px'>
-          Unlock Your Peak Productivity Now
+          Elevate Your Productivity Game Now
         </Typography>
         <SubscribeForm btnText='Subscribe for Free' />
       </Stack>

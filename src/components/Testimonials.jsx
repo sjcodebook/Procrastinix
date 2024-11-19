@@ -11,7 +11,7 @@ const testimonials = [
   {
     text: "I look forward to every Nix email—it's a perfect blend of wisdom and fun.",
     author: 'Taylor L',
-    backgroundColor: '#f6d7ff',
+    backgroundColor: '#9afd7f',
     color: '#000001',
   },
   {
@@ -42,7 +42,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <Box bgcolor='#fff' width='100%' py={8}>
+    <Box bgcolor='#f6d7ff' width='100%' py={8}>
       <Stack
         direction='row'
         justifyContent='center'
