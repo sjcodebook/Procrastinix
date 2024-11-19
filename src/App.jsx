@@ -7,6 +7,7 @@ import CtaComp1 from './components/CtaComp1'
 import WhatsInside from './components/WhatsInside'
 import MeetNix from './components/MeetNix'
 import Testimonials from './components/Testimonials'
+import FaqComp from './components/FaqComp'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <WhatsInside />
       <MeetNix />
       <Testimonials />
+      <FaqComp />
     </Box>
   )
 }
