@@ -1,6 +1,8 @@
 import { Box, Stack, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 
+import SeeMore from './common/SeeMore'
+
 import WhiteHighlight from '../assets/white-highlight-2.svg'
 
 const data = [
@@ -60,57 +62,59 @@ const data = [
 export default function FaqComp() {
   return (
     <Box bgcolor='#9afd7f' width='100%' pt={4} pb={6}>
-      <Stack
-        justifyContent='center'
-        alignItems='center'
-        width='100%'
-        maxWidth='1250px'
-        mx='auto'
-        gap={6}>
-        <Box position='relative'>
-          <img
-            src={WhiteHighlight}
-            width={250}
-            style={{
-              position: 'absolute',
-              top: '12px',
-              left: '425px',
-              zIndex: 0,
-            }}
-          />
-          <Typography
-            position='relative'
-            component='h3'
-            fontSize='52px'
-            fontWeight={700}
-            lineHeight='60px'>
-            Frequently Asked Questions
-          </Typography>
-        </Box>
-        <Grid container spacing={2}>
-          {data.map((item, index) => (
-            <Grid key={item.question + index} size={12} justifyItems='center'>
-              <Stack
-                py={2}
-                px={3}
-                justifyContent='center'
-                alignItems='flex-start'
-                border='2px solid #000001'
-                borderRadius='20px'
-                bgcolor='#fff'
-                gap={0.25}
-                width='850px'>
-                <Typography component='h4' fontSize='24px' fontWeight={700}>
-                  Q. {item.question}
-                </Typography>
-                <Typography component='p' fontSize='18px' fontWeight={400} fontStyle='italic'>
-                  A. {item.answer}
-                </Typography>
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
-      </Stack>
+      <SeeMore maxHeight='680px' btnContent='See More FAQs'>
+        <Stack
+          justifyContent='center'
+          alignItems='center'
+          width='100%'
+          maxWidth='1250px'
+          mx='auto'
+          gap={6}>
+          <Box position='relative'>
+            <img
+              src={WhiteHighlight}
+              width={250}
+              style={{
+                position: 'absolute',
+                top: '12px',
+                left: '425px',
+                zIndex: 0,
+              }}
+            />
+            <Typography
+              position='relative'
+              component='h3'
+              fontSize='52px'
+              fontWeight={700}
+              lineHeight='60px'>
+              Frequently Asked Questions
+            </Typography>
+          </Box>
+          <Grid container spacing={2}>
+            {data.map((item, index) => (
+              <Grid key={item.question + index} size={12} justifyItems='center'>
+                <Stack
+                  py={2}
+                  px={3}
+                  justifyContent='center'
+                  alignItems='flex-start'
+                  border='2px solid #000001'
+                  borderRadius='20px'
+                  bgcolor='#fff'
+                  gap={0.25}
+                  width='850px'>
+                  <Typography component='h4' fontSize='24px' fontWeight={700}>
+                    Q. {item.question}
+                  </Typography>
+                  <Typography component='p' fontSize='18px' fontWeight={400} fontStyle='italic'>
+                    A. {item.answer}
+                  </Typography>
+                </Stack>
+              </Grid>
+            ))}
+          </Grid>
+        </Stack>
+      </SeeMore>
     </Box>
   )
 }
