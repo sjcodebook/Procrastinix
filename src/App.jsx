@@ -12,20 +12,44 @@ import FaqComp from './components/FaqComp'
 import CtaComp3 from './components/CtaComp3'
 import Footer from './components/Footer'
 
+import Reveal from './components/common/Reveal'
+
 export default function App() {
   return (
     <Box width='100%'>
-      <CssBaseline />
-      <HeroComp />
-      <WhyJoin />
-      <CtaComp1 />
-      <WhatsInside />
-      <MeetNix />
-      <CtaComp2 />
-      <Testimonials />
-      <FaqComp />
-      <CtaComp3 />
-      <Footer />
+      <Reveal>
+        <CssBaseline />
+      </Reveal>
+      <Reveal>
+        <HeroComp />
+      </Reveal>
+      <Reveal>
+        <WhyJoin />
+      </Reveal>
+      <Reveal>
+        <CtaComp1 />
+      </Reveal>
+      <Reveal>
+        <WhatsInside />
+      </Reveal>
+      <Reveal>
+        <MeetNix />
+      </Reveal>
+      <Reveal>
+        <CtaComp2 />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <FaqComp />
+      </Reveal>
+      <Reveal>
+        <CtaComp3 />
+      </Reveal>
+      <Reveal>
+        <Footer />
+      </Reveal>
     </Box>
   )
 }
