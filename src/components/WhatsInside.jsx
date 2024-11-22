@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 
+import { useViewport } from '../hooks/useViewport'
 import WhiteHighlight from '../assets/white-highlight-2.svg'
 
 const data = [
@@ -31,6 +32,8 @@ const data = [
 ]
 
 export default function WhatsInside() {
+  const device = useViewport()
+
   return (
     <Box bgcolor='#9afd7f' width='100%' pt={4} pb={6}>
       <Stack
@@ -40,29 +43,31 @@ export default function WhatsInside() {
         maxWidth='1250px'
         mx='auto'
         gap={6}>
-        <Box position='relative'>
+        <Box px={1.5} position='relative'>
           <img
             src={WhiteHighlight}
             width={350}
             style={{
               position: 'absolute',
-              top: '5px',
-              left: '448px',
+              top: device === 'desktop' ? '10.5%' : device === 'tablet' ? '1%' : '35%',
+              left: device === 'desktop' ? '46.5%' : '50%',
+              transform: device === 'desktop' ? 'none' : 'translateX(-50%)',
               zIndex: 0,
             }}
           />
           <Typography
             position='relative'
             component='h3'
-            fontSize='52px'
+            fontSize={{ xs: '44px', lg: '52px' }}
             fontWeight={700}
-            lineHeight='60px'>
+            lineHeight={{ xs: '48px', lg: '60px' }}
+            textAlign='center'>
             What’s Inside Each Hoot & Hustle Email?
           </Typography>
         </Box>
-        <Grid container spacing={4}>
+        <Grid px={{ xs: 3, lg: 2 }} container spacing={{ xs: 3, lg: 4 }}>
           {data.map((item, index) => (
-            <Grid key={item.title + index} size={4}>
+            <Grid key={item.title + index} size={{ xs: 12, md: 6, lg: 4 }}>
               <Stack
                 py={2}
                 px={3}

@@ -6,6 +6,7 @@ export default function CtaComp2() {
   return (
     <Box bgcolor='#ffffff' width='100%' py={6}>
       <Stack
+        px={{ xs: 2, sm: 8, md: 22, lg: 0 }}
         justifyContent='center'
         alignItems='center'
         width='100%'
@@ -14,9 +15,10 @@ export default function CtaComp2() {
         gap={4}>
         <Typography
           component='h3'
-          fontSize='52px'
+          fontSize={{ xs: '42px', lg: '52px' }}
           fontWeight={700}
-          lineHeight='60px'
+          lineHeight={{ xs: '50px', lg: '60px' }}
+          textAlign='center'
           sx={{
             textDecoration: 'underline',
           }}>

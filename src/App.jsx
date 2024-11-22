@@ -17,9 +17,7 @@ import Reveal from './components/common/Reveal'
 export default function App() {
   return (
     <Box width='100%'>
-      <Reveal>
-        <CssBaseline />
-      </Reveal>
+      <CssBaseline />
       <Reveal>
         <HeroComp />
       </Reveal>

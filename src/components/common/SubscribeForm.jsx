@@ -24,9 +24,9 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
     <Box>
       <Stack
         mt={0.5}
-        direction='row'
-        justifyContent='flex-start'
-        alignItems='flex-start'
+        direction={{ xs: 'column', lg: 'row' }}
+        justifyContent={{ xs: 'center', lg: 'flex-start' }}
+        alignItems={{ xs: 'center', lg: 'flex-start' }}
         width='100%'
         gap={2}>
         <Stack justifyContent='center' alignItems='center' gap={0.5}>
