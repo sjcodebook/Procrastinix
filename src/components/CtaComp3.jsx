@@ -4,7 +4,7 @@ import SubscribeForm from './common/SubscribeForm'
 
 export default function CtaComp3() {
   return (
-    <Box bgcolor='#ffffff' width='100%' py={6}>
+    <Box bgcolor='#ffffff' width='100%' py={6} border='1px dashed #000001'>
       <Stack
         px={{ xs: 2, sm: 8, md: 22, lg: 0 }}
         justifyContent='center'
