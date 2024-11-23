@@ -35,6 +35,7 @@ const SeeMore = ({ children, maxHeight = '500px', btnContent = 'See More' }) => 
             border: '2px solid #000001',
             borderRadius: '20px',
             cursor: 'pointer',
+            color: '#000001',
           }}
           onClick={() => setShowFull(true)}>
           {btnContent}

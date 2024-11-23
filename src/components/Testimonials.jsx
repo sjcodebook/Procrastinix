@@ -44,19 +44,21 @@ const Testimonials = () => {
   return (
     <Box bgcolor='#f6d7ff' width='100%' py={8}>
       <Stack
+        px={{ xs: 2, md: 4, lg: 0 }}
         direction='row'
         justifyContent='center'
-        alignItems='center'
+        alignItems='flex-start'
         width='100%'
         maxWidth='1250px'
         mx='auto'
-        gap={10}>
+        gap={{ xs: 4, md: 6, lg: 8 }}>
         <Typography
-          position='relative'
+          position='sticky'
+          top='50px'
           component='h3'
-          fontSize='52px'
+          fontSize={{ xs: '44px', lg: '52px' }}
           fontWeight={700}
-          lineHeight='60px'
+          lineHeight={{ xs: '48px', lg: '60px' }}
           maxHeight='max-content'
           style={{
             writingMode: 'vertical-rl',
@@ -67,7 +69,7 @@ const Testimonials = () => {
         </Typography>
         <Grid container spacing={2}>
           {testimonials.map((item, index) => (
-            <Grid key={item.text + index} size={4}>
+            <Grid key={item.text + index} size={{ xs: 12, md: 4 }}>
               <Stack
                 height='350px'
                 py={2}
@@ -78,13 +80,26 @@ const Testimonials = () => {
                 gap={2}>
                 <Typography
                   component='h4'
-                  fontSize='28px'
+                  fontSize={{
+                    xs: '24px',
+                    md: '28px',
+                  }}
                   fontWeight={500}
                   color={item.color}
-                  lineHeight='30px'>
+                  lineHeight={{
+                    xs: '28px',
+                    md: '32px',
+                  }}>
                   {item.text}
                 </Typography>
-                <Typography component='p' fontSize='18px' fontWeight={500} color={item.color}>
+                <Typography
+                  component='p'
+                  fontSize={{
+                    xs: '14px',
+                    md: '18px',
+                  }}
+                  fontWeight={500}
+                  color={item.color}>
                   - {item.author}
                 </Typography>
               </Stack>

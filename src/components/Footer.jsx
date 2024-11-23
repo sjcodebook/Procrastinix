@@ -6,7 +6,15 @@ import Insta from '../assets/insta-icon.svg'
 export default function MeetNix() {
   return (
     <Box bgcolor='#f6d7ff' width='100%' py={3} px={4}>
-      <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+      <Stack
+        direction={{
+          xs: 'column',
+          md: 'row',
+        }}
+        justifyContent='space-between'
+        alignItems='center'
+        width='100%'
+        gap={2}>
         <Typography position='relative' component='h4' fontSize='16px' fontWeight={400}>
           ProcrastiNix.com &#169; 2024
         </Typography>

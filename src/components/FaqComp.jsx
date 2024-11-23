@@ -1,6 +1,8 @@
 import { Box, Stack, Typography } from '@mui/material'
 import Grid from '@mui/material/Grid2'
 
+import { useViewport } from '../hooks/useViewport'
+
 import SeeMore from './common/SeeMore'
 
 import WhiteHighlight from '../assets/white-highlight-2.svg'
@@ -60,6 +62,8 @@ const data = [
 ]
 
 export default function FaqComp() {
+  const device = useViewport()
+
   return (
     <Box bgcolor='#9afd7f' width='100%' pt={4} pb={6}>
       <SeeMore maxHeight='680px' btnContent='See More FAQs'>
@@ -70,27 +74,29 @@ export default function FaqComp() {
           maxWidth='1250px'
           mx='auto'
           gap={6}>
-          <Box position='relative'>
+          <Box px={2} position='relative'>
             <img
               src={WhiteHighlight}
               width={250}
               style={{
                 position: 'absolute',
-                top: '12px',
-                left: '425px',
+                top: device === 'desktop' ? '25%' : device === 'tablet' ? '15%' : '12%',
+                left: device === 'desktop' ? '63%' : '50%',
+                transform: device === 'desktop' ? 'none' : 'translateX(-50%)',
                 zIndex: 0,
               }}
             />
             <Typography
               position='relative'
               component='h3'
-              fontSize='52px'
+              fontSize={{ xs: '44px', lg: '52px' }}
               fontWeight={700}
-              lineHeight='60px'>
+              lineHeight={{ xs: '48px', lg: '60px' }}
+              textAlign='center'>
               Frequently Asked Questions
             </Typography>
           </Box>
-          <Grid container spacing={2}>
+          <Grid px={2} container spacing={2}>
             {data.map((item, index) => (
               <Grid key={item.question + index} size={12} justifyItems='center'>
                 <Stack
@@ -102,11 +108,25 @@ export default function FaqComp() {
                   borderRadius='20px'
                   bgcolor='#fff'
                   gap={0.25}
-                  width='850px'>
-                  <Typography component='h4' fontSize='24px' fontWeight={700}>
+                  width='100%'
+                  maxWidth='850px'>
+                  <Typography
+                    component='h4'
+                    fontSize={{
+                      xs: '18px',
+                      md: '24px',
+                    }}
+                    fontWeight={700}>
                     Q. {item.question}
                   </Typography>
-                  <Typography component='p' fontSize='18px' fontWeight={400} fontStyle='italic'>
+                  <Typography
+                    component='p'
+                    fontSize={{
+                      xs: '14px',
+                      md: '18px',
+                    }}
+                    fontWeight={400}
+                    fontStyle='italic'>
                     A. {item.answer}
                   </Typography>
                 </Stack>

@@ -49,6 +49,7 @@ export default function HeroComp() {
             </Typography>
           </Box>
           <Typography
+            px={1}
             component='h2'
             fontSize={{ xs: '18px', lg: '20px' }}
             fontWeight={700}
