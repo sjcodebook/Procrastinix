@@ -13,6 +13,8 @@ const {
   STORAGE_BUCKET,
   MESSAGING_SENDER_ID,
   APP_ID,
+  BREVO_API_KEY,
+  BREVO_API_ENDPOINT,
 } = process.env
 
 assert(PORT, 'Port is required')
@@ -30,4 +32,6 @@ export default {
     messagingSenderId: MESSAGING_SENDER_ID,
     appId: APP_ID,
   },
+  brevoAPIKey: BREVO_API_KEY,
+  brevoAPIEndpoint: BREVO_API_ENDPOINT,
 }
