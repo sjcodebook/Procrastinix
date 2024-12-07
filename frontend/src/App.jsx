@@ -18,7 +18,6 @@ export default function App() {
   return (
     <Box width='100%'>
       <CssBaseline />
-      <h1>test</h1>
       <Reveal>
         <HeroComp />
       </Reveal>
