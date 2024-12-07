@@ -43,7 +43,10 @@ export const getProducts = async (req, res, next) => {
         productArray.push(product)
       })
 
-      res.status(200).send(productArray)
+      res.status(200).send({
+        products: productArray,
+        message: 'Products fetched successfully',
+      })
     }
   } catch (error) {
     res.status(400).send(error.message)
