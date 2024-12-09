@@ -1,9 +1,9 @@
 import express from 'express'
 
-import { addEmailToList } from '../controllers/subscribersControllers.js'
+import { addHHSubscriberEmail } from '../controllers/subscribersControllers.js'
 
 const router = express.Router()
 
-router.post('/add-email', addEmailToList)
+router.post('/add-hh-subscriber-email', addHHSubscriberEmail)
 
 export default router
