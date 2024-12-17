@@ -1,7 +1,7 @@
 import * as EmailValidator from 'email-validator'
 import { getFirestore, getDoc, doc } from 'firebase/firestore'
-import domains from 'disposable-email-domains' assert { type: 'json' }
-import wildcards from 'disposable-email-domains/wildcard.json' assert { type: 'json' }
+import domains from 'disposable-email-domains' with { type: 'json' }
+import wildcards from 'disposable-email-domains/wildcard.json' with { type: 'json' }
 import firebase from './firebase.js'
 
 const db = getFirestore(firebase)
