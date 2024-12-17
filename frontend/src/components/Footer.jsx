@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, Tooltip } from '@mui/material'
+import { Link } from 'react-router'
 
 import Mail from '../assets/mail-icon.svg'
 import Insta from '../assets/insta-icon.svg'
@@ -43,26 +44,32 @@ export default function MeetNix() {
           </Tooltip>
         </Stack>
         <Stack direction='row' justifyContent='center' alignItems='center' gap={2}>
-          <Typography
-            component='h4'
-            fontSize='16px'
-            fontWeight={400}
-            fontStyle='italic'
-            sx={{
-              textDecoration: 'underline',
-            }}>
-            Terms
-          </Typography>
-          <Typography
-            component='p'
-            fontSize='16px'
-            fontWeight={400}
-            fontStyle='italic'
-            sx={{
-              textDecoration: 'underline',
-            }}>
-            Privacy
-          </Typography>
+          <Link to='/terms'>
+            <Typography
+              component='h4'
+              fontSize='16px'
+              fontWeight={400}
+              fontStyle='italic'
+              color='#000'
+              sx={{
+                textDecoration: 'underline',
+              }}>
+              Terms
+            </Typography>
+          </Link>
+          <Link to='/privacy'>
+            <Typography
+              component='p'
+              fontSize='16px'
+              fontWeight={400}
+              fontStyle='italic'
+              color='#000'
+              sx={{
+                textDecoration: 'underline',
+              }}>
+              Privacy
+            </Typography>
+          </Link>
         </Stack>
       </Stack>
     </Box>
