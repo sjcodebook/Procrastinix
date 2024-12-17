@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSearchParams } from 'react-router'
 import toast from 'react-hot-toast'
 import axios from 'axios'
 import { Box, Stack, Typography, TextField, Button, CircularProgress } from '@mui/material'
@@ -29,6 +30,8 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+  const [searchParams] = useSearchParams()
+
   const handleSubmit = async () => {
     if (!email) {
       toast.error('Email address is required', {
@@ -54,15 +57,22 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
     setIsSubmitting(true)
     const apiUrl = import.meta.env.VITE_SERVER_API_URL + '/add-hh-subscriber-email'
     try {
-      const res = await axios.post(apiUrl, { email })
+      const res = await axios.post(apiUrl, {
+        email,
+        source: 'WEBSITE',
+        originSource: searchParams.get('origin_source'),
+      })
       setIsSubmitted(true)
       toast.success(res.data.message, {
+        duration: 5000,
+        icon: '🚀',
         style: {
           borderRadius: '10px',
           background: '#333',
           color: '#fff',
         },
       })
+      setEmail('')
       setIsSubmitting(false)
     } catch (error) {
       setIsSubmitting(false)

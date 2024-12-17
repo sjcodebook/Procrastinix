@@ -8,7 +8,7 @@ const db = getFirestore(firebase)
 
 export const addHHSubscriberEmail = async (req, res) => {
   try {
-    const { email, originSource = 'NONE' } = req.body
+    const { email, originSource = 'NONE', source = 'DIRECT' } = req.body
 
     console.log('addHHSubscriberEmail -> email', email)
     console.log('originSource:', originSource)
@@ -49,7 +49,7 @@ export const addHHSubscriberEmail = async (req, res) => {
       createdAt: new Date(),
       subscribed: true,
       subscribedAt: new Date(),
-      source: 'DIRECT_WEBSITE',
+      source,
       originSource,
     }
 
@@ -61,7 +61,7 @@ export const addHHSubscriberEmail = async (req, res) => {
       email: trimmedEmail,
       listIds: [7],
       attributes: {
-        SOURCE: 'DIRECT_WEBSITE',
+        SOURCE: source,
         ORIGIN_SOURCE: originSource,
       },
     }
