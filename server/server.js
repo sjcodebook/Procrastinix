@@ -8,7 +8,11 @@ import subscribersRoute from './routes/subscribersRoute.js'
 const app = express()
 
 const corsOptions = {
-  origin: ['https://procrastinix.com', 'http://localhost:5173'],
+  origin: [
+    'https://procrastinix.com',
+    'http://localhost:5173',
+    'https://procrastinix-free.vercel.app',
+  ],
   optionsSuccessStatus: 200,
 }
 
