@@ -113,6 +113,7 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={isSubmitting}
+              onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
               slotProps={{
                 input: {
                   style: {

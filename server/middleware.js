@@ -4,10 +4,6 @@ import { getFirestore, getDoc, updateDoc, setDoc, doc } from 'firebase/firestore
 const db = getFirestore(firebase)
 
 export const rateLimiter = async (req, res, next) => {
-  console.log(req.headers)
-  console.log(req.headers?.['x-forwarded-for'])
-  console.log(req.headers?.['x-real-ip'])
-
   const userId = req.headers?.['x-forwarded-for'] ?? req.headers?.['x-real-ip'] ?? req.ip // Use user ID or IP address
   const maxRequests = 2 // Maximum number of requests
   const timeWindow = 60 * 1000 // Time window in milliseconds (e.g., 1 minute)
