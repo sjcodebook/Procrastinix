@@ -17,6 +17,6 @@ app.use(express.json())
 app.use(rateLimiter)
 
 //routes
-app.use('/api', subscribersRoute)
+app.use('/v1', subscribersRoute)
 
 app.listen(config.port, () => console.log(`Server is live @ ${config.hostUrl}`))
