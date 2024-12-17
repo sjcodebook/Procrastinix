@@ -10,25 +10,28 @@ export const addHHSubscriberEmail = async (req, res) => {
   try {
     const { email, originSource = 'NONE' } = req.body
 
+    console.log('addHHSubscriberEmail -> email', email)
+    console.log('originSource:', originSource)
+
     if (!email) {
       return res.status(400).send({
         message: 'Email is required',
       })
     }
 
-    if (!isValidEmail(email)) {
+    const trimmedEmail = email?.trim()?.toLowerCase()
+
+    if (!isValidEmail(trimmedEmail)) {
       return res.status(400).send({
         message: 'Invalid email',
       })
     }
 
-    if (isDisposableEmail(email)) {
+    if (await isDisposableEmail(trimmedEmail)) {
       return res.status(400).send({
         message: 'Disposable email is not allowed',
       })
     }
-
-    const trimmedEmail = email.trim().toLowerCase()
 
     // Check if email already exists
     const subscribersRef = collection(db, 'hh_subscribers')

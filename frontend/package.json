@@ -16,9 +16,12 @@
     "@formkit/auto-animate": "^0.8.2",
     "@mui/icons-material": "^6.1.6",
     "@mui/material": "^6.1.6",
+    "axios": "^1.7.9",
+    "email-validator": "^2.0.4",
     "motion": "^11.11.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
     "react-use": "^17.5.1"
   },
   "devDependencies": {
