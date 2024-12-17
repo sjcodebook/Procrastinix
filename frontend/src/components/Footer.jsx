@@ -16,7 +16,7 @@ export default function MeetNix() {
         width='100%'
         gap={2}>
         <Typography position='relative' component='h4' fontSize='16px' fontWeight={400}>
-          ProcrastiNix.com &#169; 2024
+          ProcrastiNix.com &#169; {new Date().getFullYear()}
         </Typography>
         <Stack direction='row' justifyContent='center' alignItems='center' gap={2}>
           <Tooltip title='support@procrastinix.com'>
@@ -33,6 +33,9 @@ export default function MeetNix() {
             <img
               src={Insta}
               width='34px'
+              onClick={() =>
+                window.open('https://www.instagram.com/procrastinix_official/', '_blank')
+              }
               style={{
                 cursor: 'pointer',
               }}

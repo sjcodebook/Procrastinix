@@ -57,15 +57,15 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
     setIsSubmitting(true)
     const apiUrl = import.meta.env.VITE_SERVER_API_URL + '/add-hh-subscriber-email'
     try {
-      const res = await axios.post(apiUrl, {
+      await axios.post(apiUrl, {
         email,
         source: 'WEBSITE',
         originSource: searchParams.get('origin_source'),
       })
       setIsSubmitted(true)
-      toast.success(res.data.message, {
+      toast.success('You’re In! Welcome to Hoot & Hustle!', {
         duration: 5000,
-        icon: '🚀',
+        icon: '🦉',
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -89,9 +89,14 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
   return (
     <Box>
       {isSubmitted ? (
-        <Typography fontSize='15px' fontWeight={700}>
-          Thank you for subscribing!
-        </Typography>
+        <Box border='2px solid #020304' borderRadius='10px' p={2} bgcolor='#f4f6fc'>
+          <Typography fontSize='18px' fontWeight={500}>
+            ✅ You’re officially part of Hoot & Hustle! 🦉
+          </Typography>
+          <Typography fontSize='16px' fontWeight={400}>
+            Keep an eye on your inbox – Nix has some wisdom-packed emails heading your way soon. 🚀
+          </Typography>
+        </Box>
       ) : (
         <Stack
           mt={0.5}
@@ -107,6 +112,7 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
               placeholder='Your Email Address...'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
               slotProps={{
                 input: {
                   style: {
