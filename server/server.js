@@ -8,7 +8,7 @@ import subscribersRoute from './routes/subscribersRoute.js'
 const app = express()
 
 const corsOptions = {
-  origin: 'https://procrastinix.com',
+  origin: ['https://procrastinix.com', 'http://localhost:5173'],
   optionsSuccessStatus: 200,
 }
 

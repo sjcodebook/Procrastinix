@@ -8,7 +8,10 @@ const db = getFirestore(firebase)
 
 export const addHHSubscriberEmail = async (req, res) => {
   try {
-    const { email, originSource = 'NONE' } = req.body
+    const { email, originSource = 'NONE', source = 'DIRECT' } = req.body
+
+    console.log('addHHSubscriberEmail -> email', email)
+    console.log('originSource:', originSource)
 
     if (!email) {
       return res.status(400).send({
@@ -16,19 +19,19 @@ export const addHHSubscriberEmail = async (req, res) => {
       })
     }
 
-    if (!isValidEmail(email)) {
+    const trimmedEmail = email?.trim()?.toLowerCase()
+
+    if (!isValidEmail(trimmedEmail)) {
       return res.status(400).send({
         message: 'Invalid email',
       })
     }
 
-    if (isDisposableEmail(email)) {
+    if (await isDisposableEmail(trimmedEmail)) {
       return res.status(400).send({
         message: 'Disposable email is not allowed',
       })
     }
-
-    const trimmedEmail = email.trim().toLowerCase()
 
     // Check if email already exists
     const subscribersRef = collection(db, 'hh_subscribers')
@@ -46,7 +49,7 @@ export const addHHSubscriberEmail = async (req, res) => {
       createdAt: new Date(),
       subscribed: true,
       subscribedAt: new Date(),
-      source: 'DIRECT_WEBSITE',
+      source,
       originSource,
     }
 
@@ -58,7 +61,7 @@ export const addHHSubscriberEmail = async (req, res) => {
       email: trimmedEmail,
       listIds: [7],
       attributes: {
-        SOURCE: 'DIRECT_WEBSITE',
+        SOURCE: source,
         ORIGIN_SOURCE: originSource,
       },
     }
