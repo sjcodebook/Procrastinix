@@ -1364,7 +1364,7 @@ const Privacy = () => {
   }, [])
 
   return (
-    <Stack px={8} py={4} border='5px solid #eaeaea' borderRadius={8}>
+    <Stack px={4} py={4} border='5px solid #eaeaea' borderRadius={8}>
       <Link to='/' style={{ textDecoration: 'none', alignSelf: 'center', cursor: 'pointer' }}>
         <img src={Mascot} width={80} />
       </Link>
