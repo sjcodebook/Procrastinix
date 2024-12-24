@@ -15,7 +15,7 @@ const data = [
   {
     question: 'What kind of content can I expect?',
     answer:
-      'You’ll receive a mix of motivational quotes, practical productivity tips, insights from top self-help books, and fun facts.',
+      'You’ll receive a mix of motivational quotes, practical productivity tips, insights from top self-help books, fun facts, procrastination-busting strategies, and more!',
   },
   {
     question: 'Can I share the content with friends?',
@@ -52,7 +52,7 @@ const data = [
   {
     question: 'Can I suggest content ideas?',
     answer:
-      'Yes! We love feedback from our community. Feel free to contact us with suggestions for future topics.',
+      'Yes! We love feedback from our community. Feel free to contact us via email with suggestions for future topics and we may feature them in upcoming emails.',
   },
   // {
   //   question: 'How do I access additional resources?',
@@ -125,8 +125,7 @@ export default function FaqComp() {
                       xs: '14px',
                       md: '18px',
                     }}
-                    fontWeight={400}
-                    fontStyle='italic'>
+                    fontWeight={400}>
                     A. {item.answer}
                   </Typography>
                 </Stack>

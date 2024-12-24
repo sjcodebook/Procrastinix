@@ -19,7 +19,7 @@ const data = [
   },
   {
     title: 'Boost Productivity',
-    description: 'Expert tips from top productivity books.',
+    description: 'Expert tips from top books like Atomic Habits, Deep Work etc.',
     icon: Clock,
   },
   {
@@ -34,12 +34,12 @@ const data = [
   },
   {
     title: 'Fun and Facts',
-    description: 'Light-hearted content to keep your day interesting and engaging.',
+    description: 'Light-hearted content to keep your days interesting and engaging.',
     icon: BookInfinity,
   },
   {
     title: 'Exclusive Book Insights',
-    description: "Key takeaways from the world's top 10 self-help books.",
+    description: "Key takeaways from the world's top self-help books.",
     icon: Bulb,
   },
 ]

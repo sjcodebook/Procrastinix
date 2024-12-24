@@ -34,8 +34,8 @@ export default function CtaComp1() {
           sx={{
             textDecoration: 'underline',
           }}>
-          Receive twice-weekly emails and take the first step towards a more productive, balanced
-          life.
+          Receive thrice-weekly emails and take the first step towards a more productive and
+          balanced life.
         </Typography>
       </Stack>
     </Box>

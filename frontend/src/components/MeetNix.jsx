@@ -51,9 +51,8 @@ export default function MeetNix() {
           <Typography
             component='p'
             fontSize={{ xs: '22px', lg: '34px' }}
-            fontWeight={400}
-            lineHeight={{ xs: '28px', lg: '42px' }}
-            fontStyle='italic'>
+            fontWeight={300}
+            lineHeight={{ xs: '28px', lg: '42px' }}>
             At ProcrastiNix, we’re committed to helping you defeat procrastination and unlock your
             potential. Guided by Nix the Owl, your wise companion, we share proven tips and engaging
             insights designed to transform how you approach productivity and self-growth.

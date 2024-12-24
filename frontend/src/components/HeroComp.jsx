@@ -64,9 +64,9 @@ export default function HeroComp() {
               }}>
               Hoot & Hustle by ProcrastiNix
             </span>{' '}
-            for exclusive, twice-weekly emails packed with wisdom, time management tips, and
-            inspiration from bestsellers like Atomic Habits and Deep Work. Say goodbye to
-            procrastination and hello to success—free to your inbox.
+            for exclusive, thrice-weekly emails packed with wisdom, time management tips, and
+            inspiration from bestsellers like Atomic Habits, Deep Work, Eat That Frog and many more.
+            Say goodbye to procrastination and hello to success—100% free to your inbox.
           </Typography>
           <SubscribeForm />
         </Stack>
