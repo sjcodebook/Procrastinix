@@ -1,13 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router'
+import { initializeGA, trackPageView } from './utils/analytics.js'
 
 import Home from './Home.jsx'
 import Terms from './Terms.jsx'
 import Privacy from './Privacy.jsx'
 import Redirect from './Redirect.jsx'
 
-export default function App() {
+function App() {
+  useEffect(() => {
+    initializeGA()
+  }, [])
+
   return (
     <BrowserRouter>
+      <PageViewTracker />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/terms' element={<Terms />} />
@@ -17,3 +24,15 @@ export default function App() {
     </BrowserRouter>
   )
 }
+
+const PageViewTracker = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    trackPageView(location.pathname)
+  }, [location])
+
+  return null
+}
+
+export default App

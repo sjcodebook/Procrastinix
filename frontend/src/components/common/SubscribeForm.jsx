@@ -6,6 +6,7 @@ import { Box, Stack, Typography, TextField, Button, CircularProgress } from '@mu
 import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 
+import { trackEvent } from '../../utils/analytics'
 import { isValidEmail } from '../../utils/common'
 
 const CustomBtn = styled(Button)(() => ({
@@ -25,7 +26,11 @@ const CustomTextField = styled(TextField)(() => ({
   '& fieldset': { border: 'none' },
 }))
 
-export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe for Free Now' }) {
+export default function SubscribeForm({
+  showSubText = true,
+  btnText = 'Subscribe for Free Now',
+  trackingLabel = 'cta',
+}) {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -33,6 +38,12 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
   const [searchParams] = useSearchParams()
 
   const handleSubmit = async () => {
+    trackEvent({
+      action: 'btn_click',
+      category: 'subscribe',
+      label: trackingLabel,
+      value: 1,
+    })
     if (!email) {
       toast.error('Email address is required', {
         style: {
@@ -154,4 +165,5 @@ export default function SubscribeForm({ showSubText = true, btnText = 'Subscribe
 SubscribeForm.propTypes = {
   showSubText: PropTypes.bool,
   btnText: PropTypes.string,
+  trackingLabel: PropTypes.string,
 }

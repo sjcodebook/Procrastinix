@@ -24,7 +24,7 @@ export default function CtaComp2() {
           }}>
           Unlock Your Peak Productivity Now
         </Typography>
-        <SubscribeForm btnText='Subscribe for Free' />
+        <SubscribeForm btnText='Subscribe for Free' trackingLabel='cta2' />
       </Stack>
     </Box>
   )

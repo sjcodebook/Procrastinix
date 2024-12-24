@@ -24,7 +24,7 @@ export default function CtaComp1() {
           }}>
           Ready to Supercharge Your Productivity?
         </Typography>
-        <SubscribeForm showSubText={false} btnText='Join Now for Free' />
+        <SubscribeForm showSubText={false} btnText='Join Now for Free' trackingLabel='cta1' />
         <Typography
           component='h4'
           fontSize='18px'

@@ -24,7 +24,7 @@ export default function CtaComp3() {
           }}>
           Elevate Your Productivity Game Now
         </Typography>
-        <SubscribeForm btnText='Subscribe for Free' />
+        <SubscribeForm btnText='Subscribe for Free' trackingLabel='cta3' />
       </Stack>
     </Box>
   )
