@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga4'
 
 export const initializeGA = () => {
-  ReactGA.initialize('G-YP09V3RYCN')
+  ReactGA.initialize(import.meta.env.GOOGLE_ANALYTICS_ID)
 }
 
 export const trackPageView = (page) => {
