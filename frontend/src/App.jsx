@@ -1,53 +1,19 @@
-import CssBaseline from '@mui/material/CssBaseline'
-import { Box } from '@mui/material'
+import { BrowserRouter, Routes, Route } from 'react-router'
 
-import HeroComp from './components/HeroComp'
-import WhyJoin from './components/WhyJoin'
-import CtaComp1 from './components/CtaComp1'
-import WhatsInside from './components/WhatsInside'
-import MeetNix from './components/MeetNix'
-import CtaComp2 from './components/CtaComp2'
-import Testimonials from './components/Testimonials'
-import FaqComp from './components/FaqComp'
-import CtaComp3 from './components/CtaComp3'
-import Footer from './components/Footer'
-
-import Reveal from './components/common/Reveal'
+import Home from './Home.jsx'
+import Terms from './Terms.jsx'
+import Privacy from './Privacy.jsx'
+import Redirect from './Redirect.jsx'
 
 export default function App() {
   return (
-    <Box width='100%'>
-      <CssBaseline />
-      <Reveal>
-        <HeroComp />
-      </Reveal>
-      <Reveal>
-        <WhyJoin />
-      </Reveal>
-      <Reveal>
-        <CtaComp1 />
-      </Reveal>
-      <Reveal>
-        <WhatsInside />
-      </Reveal>
-      <Reveal>
-        <MeetNix />
-      </Reveal>
-      <Reveal>
-        <CtaComp2 />
-      </Reveal>
-      <Reveal>
-        <Testimonials />
-      </Reveal>
-      <Reveal>
-        <FaqComp />
-      </Reveal>
-      <Reveal>
-        <CtaComp3 />
-      </Reveal>
-      <Reveal>
-        <Footer />
-      </Reveal>
-    </Box>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/terms' element={<Terms />} />
+        <Route path='/privacy' element={<Privacy />} />
+        <Route path='*' element={<Redirect />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
