@@ -68,7 +68,12 @@ export default function HeroComp() {
             inspiration from bestsellers like Atomic Habits, Deep Work, Eat That Frog and many more.
             Say goodbye to procrastination and hello to success—100% free to your inbox.
           </Typography>
-          <SubscribeForm trackingLabel='ctaHero' />
+          <SubscribeForm
+            trackingLabel='ctaHero'
+            textfieldProps={{
+              autoFocus: true,
+            }}
+          />
         </Stack>
       </Stack>
     </Box>

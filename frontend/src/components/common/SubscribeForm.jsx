@@ -1,13 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useSearchParams } from 'react-router'
-import toast from 'react-hot-toast'
-import axios from 'axios'
 import { Box, Stack, Typography, TextField, Button, CircularProgress } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 
-import { trackEvent } from '../../utils/analytics'
-import { isValidEmail } from '../../utils/common'
+import { AppContext } from '../../App'
+import { subscribe } from '../../actions/subscribe'
 
 const CustomBtn = styled(Button)(() => ({
   color: '#000',
@@ -30,76 +28,42 @@ export default function SubscribeForm({
   showSubText = true,
   btnText = 'Subscribe for Free Now',
   trackingLabel = 'cta',
+  textfieldProps = {},
 }) {
+  const { appState, setAppState } = useContext(AppContext)
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const [searchParams] = useSearchParams()
 
   const handleSubmit = async () => {
-    trackEvent({
-      action: 'btn_click',
-      category: 'subscribe',
-      label: trackingLabel,
-      value: 1,
-    })
-    if (!email) {
-      toast.error('Email address is required', {
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-        },
-      })
-      return
-    }
-    const trimmedEmail = email.trim()
-    if (!isValidEmail(trimmedEmail)) {
-      toast.error('Invalid email address', {
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-        },
-      })
-      return
-    }
-    setIsSubmitting(true)
-    const apiUrl = import.meta.env.VITE_SERVER_API_URL + '/add-hh-subscriber-email'
     try {
-      await axios.post(apiUrl, {
+      setIsSubmitting(true)
+      await subscribe({
         email,
-        source: 'WEBSITE',
+        trackingLabel,
+        source: searchParams.get('source') ?? 'WEBSITE',
         originSource: searchParams.get('origin_source'),
       })
-      setIsSubmitted(true)
-      toast.success('You’re In! Welcome to Hoot & Hustle!', {
-        duration: 5000,
-        icon: '🦉',
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-        },
+      setAppState({
+        ...appState,
+        hasSubscribed: true,
       })
       setEmail('')
       setIsSubmitting(false)
     } catch (error) {
-      setIsSubmitting(false)
-      toast.error(error.response.data.message || 'Something Went Wrong. Please Try Again Later.', {
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-        },
+      setAppState({
+        ...appState,
+        hasSubscribed: false,
       })
+      setIsSubmitting(false)
+      console.error(error)
     }
   }
 
   return (
     <Box>
-      {isSubmitted ? (
+      {appState.hasSubscribed ? (
         <Box border='2px solid #020304' borderRadius='10px' p={2} bgcolor='#f4f6fc'>
           <Typography fontSize='18px' fontWeight={500}>
             ✅ You’re officially part of Hoot & Hustle! 🦉
@@ -136,6 +100,7 @@ export default function SubscribeForm({
                   },
                 },
               }}
+              {...textfieldProps}
             />
             {showSubText && (
               <Typography fontStyle='italic' fontSize='15px'>
@@ -166,4 +131,5 @@ SubscribeForm.propTypes = {
   showSubText: PropTypes.bool,
   btnText: PropTypes.string,
   trackingLabel: PropTypes.string,
+  textfieldProps: PropTypes.object,
 }
